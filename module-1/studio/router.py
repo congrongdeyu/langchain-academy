@@ -14,7 +14,12 @@ def multiply(a: int, b: int) -> int:
     return a * b
 
 # LLM with bound tool
-llm = ChatOpenAI(model="gpt-4o")
+llm = ChatOpenAI(
+    model="glm-4.5-flash",
+    temperature=0,
+    api_key="e90a3144349c9571f2b465a17684099a.g1k1tPNphEaqpdbT",
+    base_url="https://open.bigmodel.cn/api/paas/v4/",
+)
 llm_with_tools = llm.bind_tools([multiply])
 
 # Node
